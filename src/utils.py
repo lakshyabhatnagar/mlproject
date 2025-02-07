@@ -30,3 +30,11 @@ def evaluate_model(model:dict,X_train:np.array,Y_train:np.array,X_test:np.array,
 
     except Exception as e:
         raise CustomException(e,sys)
+    
+def load_object(file_path):
+    try:
+        with open(file_path,"rb") as f:
+            return dill.load(f)
+    except Exception as e:
+        raise CustomException(e,sys)
+    
